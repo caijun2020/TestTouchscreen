@@ -13,6 +13,8 @@ PURPOSE:        Proface Touchscreen touch event report
 #include "QSerialPort.h"
 #include "QConfigSetting.h"
 
+#define PROFACE_TOUCH_DATA_WITH_HEADER
+
 class ProfaceTouch : public QObject
 {
     Q_OBJECT
@@ -67,6 +69,7 @@ public:
         TOUCH_RELEASED = 0x10
     };
 
+#ifdef PROFACE_TOUCH_DATA_WITH_HEADER
     struct PROFACE_TOUCH_DATA_T
     {
         uint8_t header; // Always 0x11
@@ -85,6 +88,24 @@ public:
         uint8_t ylo;    // Low 8 bits of Y
         uint8_t released;   // Always 0x10
     };
+#else
+    struct PROFACE_TOUCH_DATA_T
+    {
+        uint8_t xhi;    // High 8 bits of X
+        uint8_t xlo;    // Low 8 bits of X
+        uint8_t yhi;    // High 8 bits of Y
+        uint8_t ylo;    // Low 8 bits of Y
+    };
+
+    struct PROFACE_RELEASED_DATA_T
+    {
+        uint8_t xhi;    // High 8 bits of X
+        uint8_t xlo;    // Low 8 bits of X
+        uint8_t yhi;    // High 8 bits of Y
+        uint8_t ylo;    // Low 8 bits of Y
+        uint8_t released;   // Always 0x10
+    };
+#endif
 
 signals:
     void newTouchData(int x, int y, int z);

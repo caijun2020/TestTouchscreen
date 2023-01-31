@@ -1,5 +1,5 @@
 QMainWindow#MainWindow { 
-border-image: url(./Resource/background.jpg); 
+border-image: url(./Resource/background.png); 
 }
 
 QToolButton#btnMain{

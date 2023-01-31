@@ -118,7 +118,7 @@ void MainWindow::initUI()
     this->setWindowTitle(tr("Test Touchscreen"));
 
     // Set Menu Bar Version Info
-    ui->menuVersion->addAction("V1.0 2022-Mar-15");
+    ui->menuVersion->addAction("V1.0 2022-Mar-19");
 }
 
 void MainWindow::initObject()
