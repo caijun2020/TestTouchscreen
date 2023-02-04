@@ -22,7 +22,7 @@ class SerialDebugWidget : public QWidget
     Q_OBJECT
     
 public:
-    explicit SerialDebugWidget(QSerialPort *portHandler = NULL, QWidget *parent = 0);
+    explicit SerialDebugWidget(QSerialPort *portHandler = NULL, QString title = "", QWidget *parent = 0);
     ~SerialDebugWidget();
 
     /*-----------------------------------------------------------------------

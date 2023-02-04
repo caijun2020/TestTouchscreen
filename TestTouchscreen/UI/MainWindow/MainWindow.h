@@ -13,6 +13,8 @@ PURPOSE:        Software Main Window
 #include "SerialDebugWidget.h"
 #include "PaintWidget.h"
 #include "ProfaceTouch.h"
+#include "MKUTouch.h"
+#include "SettingWidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -32,6 +34,8 @@ protected:
 private slots:
     void navigatorButtonClick();
 
+    void touchTypeChanged(int type);
+
 private:
     Ui::MainWindow *ui;
 
@@ -41,9 +45,12 @@ private:
     // UIs
     SerialDebugWidget *m_serialW;
     PaintWidget *m_paintW;
+    SettingWidget *m_settingW;
 
     // Touch handler
-    ProfaceTouch *m_touch;
+    TouchAbs *m_touch;
+    ProfaceTouch *m_profaceTs;
+    MKUTouch *m_mkuTs;
 
     // Init UI
     void initUI();

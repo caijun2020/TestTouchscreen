@@ -2,6 +2,21 @@
 Touchscreen test program based on Qt4.8, support Proface FP3700 touchscreen, read touch data from RS232 COM port.
 
 
+V2.0 2023-Feb-04
+1. Support 2 touchscreen (Proface and MKU)
+2. Add touch base class TouchAbs
+3. Change config.ini setting, load touchscreen type, 0£ºproface, 1:MKU
+[Touchscreen]
+HScreen=1024
+VScreen=768
+Type=0
+
+4. Update serial widget class SerialDebugWidget, in contructor funtion init the m_title
+5. Add UI widget SettingWidget to select touch type
+6. In class MainWidow, when create the serial handler, bind to the 2 touchscreen handler, so can support the 2 touchscreen simultaneously
+
+
+
 V1.0 2022-Mar-19
 1. Bugfix for parseTouchData() in class ProfaceTouch, the program can enter loop,
 replace comDataBuffer->chop() with comDataBuffer->remove() to fix the bug.

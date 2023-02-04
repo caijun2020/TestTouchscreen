@@ -14,12 +14,15 @@ DEFINES += ELPP_NO_DEFAULT_LOG_FILE ELPP_QT_LOGGING
 
 SOURCES += \
     App/RenderArea/RenderArea.cpp \
+    App/Touchscreen/MKUTouch.cpp \
     App/Touchscreen/ProfaceTouch.cpp \
+    App/Touchscreen/TouchAbs.cpp \
     Communication/SerialPort/QSerialPort.cpp \
     Communication/SerialPort/SerialDebugWidget.cpp \
     Communication/SerialPort/qextserialbase.cpp \
     UI/MainWindow/MainWindow.cpp \
     UI/Paint/PaintWidget.cpp \
+    UI/Setting/SettingWidget.cpp \
     Utility/Buffer/FifoBuffer.cpp \
     Utility/Buffer/LoopBuffer.cpp \
     Utility/Log/easyloggingpp/easylogging++.cc \
@@ -29,13 +32,16 @@ SOURCES += \
 
 HEADERS += \
     App/RenderArea/RenderArea.h \
+    App/Touchscreen/MKUTouch.h \
     App/Touchscreen/ProfaceTouch.h \
+    App/Touchscreen/TouchAbs.h \
     Communication/SerialPort/ComInitData.h \
     Communication/SerialPort/QSerialPort.h \
     Communication/SerialPort/SerialDebugWidget.h \
     Communication/SerialPort/qextserialbase.h \
     UI/MainWindow/MainWindow.h \
     UI/Paint/PaintWidget.h \
+    UI/Setting/SettingWidget.h \
     Utility/Buffer/FifoBuffer.h \
     Utility/Buffer/LoopBuffer.h \
     Utility/Log/easyloggingpp/easylogging++.h \
@@ -46,7 +52,8 @@ HEADERS += \
 FORMS += \
     Communication/SerialPort/SerialDebugWidget.ui \
     UI/MainWindow/MainWindow.ui \
-    UI/Paint/PaintWidget.ui
+    UI/Paint/PaintWidget.ui \
+    UI/Setting/SettingWidget.ui
 
 win32{
     HEADERS += Communication/SerialPort/win_qextserialport.h
@@ -67,6 +74,7 @@ INCLUDEPATH += $$PWD/Communication/SerialPort
 INCLUDEPATH += $$PWD/UI
 INCLUDEPATH += $$PWD/UI/MainWindow
 INCLUDEPATH += $$PWD/UI/Paint
+INCLUDEPATH += $$PWD/UI/Setting
 INCLUDEPATH += $$PWD/Utility
 INCLUDEPATH += $$PWD/Utility/Buffer
 INCLUDEPATH += $$PWD/Utility/Setting

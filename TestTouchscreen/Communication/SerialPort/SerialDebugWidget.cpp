@@ -56,7 +56,7 @@ SerialDebugWidget::COMBOX_LIST flowType_combox[] =
 };
 
 
-SerialDebugWidget::SerialDebugWidget(QSerialPort *portHandler, QWidget *parent) :
+SerialDebugWidget::SerialDebugWidget(QSerialPort *portHandler, QString title, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::SerialDebugWidget),
     m_settingFile("config.ini"),
@@ -70,7 +70,7 @@ SerialDebugWidget::SerialDebugWidget(QSerialPort *portHandler, QWidget *parent) 
     autoClearRxFlag(true),
     refreshTimer(new QTimer),
     refreshInMs(1000),
-    m_title(""),
+    m_title(title),
     showTxPacketFlag(true),
     showRxPacketFlag(true)
 {
