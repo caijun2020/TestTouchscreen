@@ -5,7 +5,7 @@ Touchscreen test program based on Qt4.8, support Proface FP3700 touchscreen, rea
 V2.0 2023-Feb-04
 1. Support 2 touchscreen (Proface and MKU)
 2. Add touch base class TouchAbs
-3. Change config.ini setting, load touchscreen type, 0£ºproface, 1:MKU
+3. Change config.ini setting, load touchscreen type, 0:proface, 1:MKU
 [Touchscreen]
 HScreen=1024
 VScreen=768
